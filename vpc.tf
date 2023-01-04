@@ -4,7 +4,7 @@ resource "aws_vpc" "nginx" {
   enable_dns_support   = "true"
   enable_dns_hostnames = "true"
   tags = {
-    Name = "my-vpc-nginx"
+    Name = "rajender"
   }
 }
 resource "aws_subnet" "nginx-pub-1" {
@@ -13,7 +13,7 @@ resource "aws_subnet" "nginx-pub-1" {
   map_public_ip_on_launch = "true"
   availability_zone       = var.zone1
   tags = {
-    Name = "nginx-pub-1"
+    Name = "rajender-pub-1"
   }
 }
 resource "aws_subnet" "nginx-pub-2" {
@@ -22,7 +22,7 @@ resource "aws_subnet" "nginx-pub-2" {
   map_public_ip_on_launch = "true"
   availability_zone       = var.zone2
   tags = {
-    Name = "nginx-pub-2"
+    Name = "rajender-pub-2"
   }
 }
 resource "aws_subnet" "nginx-pub-3" {
@@ -31,7 +31,7 @@ resource "aws_subnet" "nginx-pub-3" {
   map_public_ip_on_launch = "true"
   availability_zone       = var.zone3
   tags = {
-    Name = "nginx-pub-3"
+    Name = "rajender-pub-3"
   }
 }
 resource "aws_subnet" "nginx-priv-1" {
@@ -40,7 +40,7 @@ resource "aws_subnet" "nginx-priv-1" {
   map_public_ip_on_launch = "true"
   availability_zone       = var.zone1
   tags = {
-    Name = "nginx-priv-1"
+    Name = "rajender-priv-1"
   }
 }
 resource "aws_subnet" "nginx-priv-2" {
@@ -49,7 +49,7 @@ resource "aws_subnet" "nginx-priv-2" {
   map_public_ip_on_launch = "true"
   availability_zone       = var.zone2
   tags = {
-    Name = "nginx-priv-2"
+    Name = "rajender-priv-2"
   }
 }
 resource "aws_subnet" "nginx-priv-3" {
@@ -65,7 +65,7 @@ resource "aws_internet_gateway" "nginx-IGW" {
   vpc_id = aws_vpc.nginx.id
 
   tags = {
-    Name = "nginx-IGW"
+    Name = "rajender-IGW"
   }
 }
 resource "aws_route_table" "nginx-pub-RT" {
@@ -75,7 +75,7 @@ resource "aws_route_table" "nginx-pub-RT" {
     gateway_id = aws_internet_gateway.nginx-IGW.id
   }
   tags = {
-    name = "nginx-pub-RT"
+    name = "rajender-pub-RT"
   }
 }
 resource "aws_route_table_association" "nginx-pub-1-a" {
